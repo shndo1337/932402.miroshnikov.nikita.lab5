@@ -5,7 +5,21 @@
   --color-heading: #c4b5fd;
   --color-text: #f8f7ff;
   --color-field-text: #17152f;
+  --color-visited: #e9d5ff;
+  --color-link-hover: #ffffff;
+  --color-button: #6d28d9;
+  --color-button-hover: #7c3aed;
   --font-main: Arial, Helvetica, sans-serif;
+}
+
+body.theme-light {
+  --color-primary: #f3f0ff;
+  --color-surface: #ffffff;
+  --color-accent: #6d28d9;
+  --color-heading: #4c1d95;
+  --color-text: #1e1b3a;
+  --color-visited: #6b21a8;
+  --color-link-hover: #1e1b3a;
 }
 
 * {
@@ -54,11 +68,11 @@ nav a {
 }
 
 nav a:visited {
-  color: #e9d5ff;
+  color: var(--color-visited);
 }
 
 nav a:hover {
-  color: #ffffff;
+  color: var(--color-link-hover);
 }
 
 nav a:active {
@@ -135,14 +149,14 @@ textarea:focus {
 button {
   margin-top: 8px;
   color: #ffffff;
-  background-color: #6d28d9;
+  background-color: var(--color-button);
   border: 0;
   cursor: pointer;
 }
 
 button:hover,
 button:focus {
-  background-color: #7c3aed;
+  background-color: var(--color-button-hover);
 }
 
 button:active {
@@ -262,4 +276,65 @@ img {
 
 #analyze-btn:active {
   transform: scale(0.95);
+}
+
+.hidden {
+  display: none;
+}
+
+#theme-toggle {
+  margin-top: 0;
+}
+
+.playlist-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.playlist-controls button {
+  margin-top: 0;
+}
+
+#playlist {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.track {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 16px;
+  margin-bottom: 8px;
+  padding: 10px 12px;
+  background-color: var(--color-primary);
+  border-left: 4px solid transparent;
+}
+
+.track.favorite {
+  border-left-color: var(--color-accent);
+}
+
+.track.favorite .track-name::before {
+  content: "★ ";
+  color: var(--color-accent);
+}
+
+.track-name {
+  flex: 1 1 160px;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  font-weight: bold;
+}
+
+.track-favorite {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.track-delete {
+  margin-top: 0;
 }

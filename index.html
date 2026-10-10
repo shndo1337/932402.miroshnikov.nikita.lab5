@@ -11,12 +11,13 @@
     #skills ul { list-style-type: square; }
   </style>
 </head>
-<body>
+<body class="theme-dark">
   <header>
     <img src="images/image.png" alt="Фотография Никиты Мирошникова" width="180" height="180">
     <p class="subtitle">Музыкант и звукорежиссёр</p>
     <h1>Никита Мирошников</h1>
     <p>Студент группы 932402, вариант №9</p>
+    <button id="theme-toggle" type="button">Включить светлую тему</button>
   </header>
 
   <nav aria-label="Навигация по странице">
@@ -24,6 +25,7 @@
     <a href="#projects">Проекты</a>
     <a href="#releases">Релизы</a>
     <a href="#equipment">Оборудование</a>
+    <a href="#playlist-section">Плейлист</a>
     <a href="#contact">Обратная связь</a>
   </nav>
 
@@ -110,6 +112,20 @@
           <h3>Электрогитара</h3>
           <p>Запись партий и создание музыкальных аранжировок.</p>
         </article>
+      </div>
+    </section>
+
+    <section id="playlist-section">
+      <h2>Плейлист</h2>
+      <div class="playlist-controls">
+        <button id="add-track-btn" type="button">Добавить трек</button>
+        <button id="clear-playlist-btn" type="button">Очистить плейлист</button>
+        <button id="toggle-playlist-btn" type="button" aria-expanded="true" aria-controls="playlist-content">Скрыть плейлист</button>
+      </div>
+      <div id="playlist-content">
+        <p id="playlist-stats" aria-live="polite"></p>
+        <p id="playlist-empty" hidden>Плейлист пуст. Добавьте первый трек.</p>
+        <ul id="playlist"></ul>
       </div>
     </section>
 
